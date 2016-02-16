@@ -1,1 +1,9 @@
-{{outlet}}
+{{navigation-bar navigation=model.navigation}}
+<div class="content">
+<ul>
+  {{#each model.travelPlans as |plan|}}
+    <li>{{plan.name}}</li>
+  {{/each}}
+</ul>
+</div>
+{{tab-bar tabs=model.tabs}}

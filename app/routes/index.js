@@ -1,14 +1,49 @@
 import Ember from 'ember';
 
-var tabs = [{
-    name: "a"
+const travelPlans = [
+{
+  name: "tokyo2016"
+},
+{
+  name: "nagasaki2017"
+},
+{
+  name: "okinawa2018"
+},
+{
+  name: "nagoya2020"
+},
+{
+  name: "hakata2025"
+},
+];
+
+const tabs = [{
+    name: "tab1",
+    url: "http://"
 }, {
-    name: "b"
+    name: "tab2",
+    url: "http://"
 }, {
-    name: "c"
+    name: "tab3",
+    url: "http://"
 }, {
-    name: "d"
+    name: "tab4",
+    url: "http://"
 }];
 
+const navigation = {
+  title: "title",
+  back: "back"
+}
+
 export default Ember.Route.extend({
+  model() {
+    return {
+      navigation: navigation,
+      tabs: tabs,
+      travelPlans: travelPlans,
+    }
+  },
 });
+
