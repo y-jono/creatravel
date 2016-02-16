@@ -1,6 +1,5 @@
 <list id="tab-bar">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
+  {{#each tabs as |tab|}}
+    <li class="tab-bar__tab">{{tab.name}}</li>
+  {{/each}}
 </list>
