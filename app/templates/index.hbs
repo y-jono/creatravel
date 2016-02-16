@@ -1,9 +1,9 @@
 {{navigation-bar navigation=model.navigation}}
-<div class="content">
-<ul>
+<main>
+<ul class="travel-plans">
   {{#each model.travelPlans as |plan|}}
-    <li>{{plan.name}}</li>
+    <li class="travel-plans__plan">{{plan.name}}</li>
   {{/each}}
 </ul>
-</div>
+</main>
 {{tab-bar tabs=model.tabs}}
