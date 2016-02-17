@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+
+/* Base
+   ----------------------------------------------------------------- */
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #fbe550;
+    color: #333;
+    height: 100%;
+
+    input, button {
+      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    a {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      color: #0070c0;
+    }
+
+    a:hover,
+    input[type="submit"]:hover,
+    input[type="button"]:hover {
+      opacity: 0.6;
+      filter: alpha(opacity=60);
+    }
+
+    a:visited,
+    a:active {
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+
+    ul, ol {
+      margin-left: 1em;
+    }
+}
+
+/* ----- */
+
+.container {
+    height: 100%;
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+
+.ember-application {
+  background-color: #777;
+}
