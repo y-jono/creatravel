@@ -20,21 +20,25 @@ const travelPlans = [
 
 const tabs = [{
     name: "tab1",
-    url: "http://"
+    url: "index",
+    icon: "fa fa-clock-o"
 }, {
     name: "tab2",
-    url: "http://"
+    url: "index",
+    icon: "fa fa-heart"
 }, {
     name: "tab3",
-    url: "http://"
+    url: "index",
+    icon: "fa fa-users"
 }, {
     name: "tab4",
-    url: "http://"
+    url: "index",
+    icon: "fa fa-ellipsis-h"
 }];
 
 const navigation = {
-  title: "title",
-  back: "back"
+  title: "長崎旅行2015",
+  backIcon: "fa fa-chevron-left"
 }
 
 export default Ember.Route.extend({
