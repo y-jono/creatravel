@@ -55,6 +55,8 @@ body {
 
 .container {
     height: 100%;
+    padding-top: calc(2em * 1.5); /* nav-bar height = font-size * line-height(ratio) */
+    padding-bottom: calc(2em * 1.5); /* tab-bar height = font-size * line-height(ratio) */
 }
 
 
@@ -81,6 +83,11 @@ body {
   -webkit-justify-content: space-between;  /* Safari */
   justify-content: space-between;
   font-size: 2em;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background-color: #FFF;
 }
 
 /* ==========================================================================
