@@ -92,6 +92,10 @@ body {
   -webkit-justify-content: space-between;  /* Safari */
   justify-content: space-between;
   background-color: #666;
+  position: fixed;
+  bottom: 0;
+  margin-left: 0;
+  width: 100%;
 
   .tab-bar__item{
     text-align: center;
