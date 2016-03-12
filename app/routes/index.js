@@ -1,20 +1,68 @@
 import Ember from 'ember';
 
+const kSpot = Symbol('spot');
+const kMovement = Symbol('movement');
+
+const days = [
+{
+  month: 4,
+  day: 30,
+  daysOfTheWeek: "土"
+},
+{
+  month: 5,
+  day: 1,
+  daysOfTheWeek: "日"
+},
+{
+  month: 5,
+  day: 2,
+  daysOfTheWeek: "月"
+},
+{
+}
+];
+
 const travelPlans = [
 {
-  name: "tokyo2016"
+  mark: "1",
+  icon: "fa fa-paper-plane",
+  timespan: ["10:40", "10:50"],
+  kind: kSpot,
+  name: "新千歳空港"
 },
 {
-  name: "nagasaki2017"
+  mark: "",
+  icon: "fa fa-paper-plane",
+  kind: kMovement,
+  name: "飛行機"
 },
 {
-  name: "okinawa2018"
+  mark: "1",
+  icon: "fa fa-paper-plane",
+  kind: kSpot,
+  timespan: ["10:40", "10:50"],
+  name: "福岡空港"
 },
 {
-  name: "nagoya2020"
+  mark: "123",
+  icon: "fa fa-paper-plane",
+  kind: kSpot,
+  timespan: ["10:40", "10:50"],
+  name: "カツ丼"
 },
 {
-  name: "hakata2025"
+  mark: "",
+  icon: "fa fa-paper-plane",
+  kind: kMovement,
+  name: "徒歩"
+},
+{
+  mark: "123",
+  icon: "fa fa-paper-plane",
+  kind: kSpot,
+  timespan: ["10:40", "10:50"],
+  name: "小浜ビジネスホテル"
 },
 ];
 
@@ -47,6 +95,7 @@ export default Ember.Route.extend({
       navigation: navigation,
       tabs: tabs,
       travelPlans: travelPlans,
+      days: days,
     }
   },
 });
