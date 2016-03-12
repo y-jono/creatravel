@@ -117,3 +117,85 @@ body {
   }
 }
 
+/* ==========================================================================
+   druggable-bar
+   ========================================================================== */
+.druggable-bar {
+  text-align: center;
+  background-color: #d5d5d5; 
+}
+
+$travel-days__date__text-width: 1.2em;
+$travel-days__date__a-height: 70px;
+
+.travel-days {
+  font-size: 10px;
+  background-color: #aed9d1;
+  margin-left: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: auto; /* サイズがはみ出した場合、スクロール方法をブラウザのおすすめで決定してくれる */
+
+  .travel-days__date{
+    display: inline-block; /**/
+    text-align: center;
+    font-size: 18px;
+    width: 65px;
+    vertical-align: top; /* li 日付とEmptyでベースラインがずれてしまうため、強制する */
+    a {
+      display: block;
+      position: relative; /* position absolute の基準となる */
+      background-color: #81C3B6;
+      color: white;
+      width: 100%;
+      height: $travel-days__date__a-height; /* TODO 高さ要調整 */
+      &.active {
+        color: red;
+        background-color: white;
+      }
+    }
+    .travel-days__date__month {
+      position: absolute;
+      top: 5px;
+      right: 50%; /* 右端が中心にくる */
+      width: $travel-days__date__text-width;
+      text-align: center; /* ２桁右寄せ */
+    }
+    /* 月と日付をまたぐスラッシュをボーダーで記述する */
+    .travel-days__date__month:after {
+      display: block;
+      position: absolute;
+      bottom: 4px;
+      right: -20px;
+      border-top: 1px solid;
+      width: 40px;
+      transform: rotate(-45deg);
+      content: ""; /* contentがないと擬似要素が有効にならない仕様 */
+    }
+    .travel-days__date__day {
+      position: absolute;
+      top: calc(5px + 1em);
+      left: 50%;  /* 左端が中心にくる */
+      width: $travel-days__date__text-width;
+      text-align: center; /* ２桁右寄せ */
+    }
+    .travel-days__date__daysOfTheWeek {
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  .travel-days__date--empty{
+    @extend .travel-days__date;
+    a {
+      color: #C1E6DE;
+      background-color: #94CDC1;
+      line-height: $travel-days__date__a-height;
+      vertical-align: medium;
+    }
+  }
+}

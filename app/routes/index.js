@@ -10,16 +10,34 @@ const days = [
   daysOfTheWeek: "土"
 },
 {
-  month: 5,
+  month: 12,
   day: 1,
   daysOfTheWeek: "日"
 },
 {
-  month: 5,
-  day: 2,
+  month: 12,
+  day: 23,
   daysOfTheWeek: "月"
 },
 {
+  month: 12,
+  day: 23,
+  daysOfTheWeek: "月"
+},
+{
+  month: 12,
+  day: 23,
+  daysOfTheWeek: "月"
+},
+{
+  month: 12,
+  day: 23,
+  daysOfTheWeek: "月"
+},
+{
+  month: 5,
+  day: 3,
+  daysOfTheWeek: "火"
 }
 ];
 

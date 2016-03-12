@@ -1,15 +1,24 @@
 {{navigation-bar navigation=model.navigation}}
 <main>
 {{g-map lat=35.658 lng=139.741 zoom=6}}
-<div class="druggable-bar"></div>
+<div class="druggable-bar">
+  <i class="fa fa-bars"></i>
+</div>
 <ul class="travel-days">
   {{#each model.days as |date|}}
-    <li>
-      <span>{{date.month}}</span>
-      <span>{{date.day}}</span>
-      <span>{{date.daysOfTheWeek}}</span>
+    <li class="travel-days__date">
+      <a class="active"> <!-- TODO: link to に置き換える -->
+        <span class="travel-days__date__month">{{date.month}}</span>
+        <span class="travel-days__date__day">{{date.day}}</span>
+        <span class="travel-days__date__daysOfTheWeek">（{{date.daysOfTheWeek}}）</span>
+      </a>
     </li>
   {{/each}}
+  <li class="travel-days__date--empty">
+    <a>
+      <i class="fa fa-pencil"></i>
+    </a>
+  </li>
 </ul>
 <ul class="travel-plans">
   {{#each model.travelPlans as |plan|}}
