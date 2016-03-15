@@ -1,44 +1,4 @@
 {{navigation-bar navigation=model.navigation}}
-<main>
-{{g-map lat=35.658 lng=139.741 zoom=6}}
-<div class="draggable-bar">
-  <i class="fa fa-bars"></i>
-</div>
-<ul class="travel-days">
-  {{#each model.days as |date|}}
-    <li class="travel-days__date">
-      <a class="active"> <!-- TODO: link to に置き換える -->
-        <span class="travel-days__date__month">{{date.month}}</span>
-        <span class="travel-days__date__day">{{date.day}}</span>
-        <span class="travel-days__date__daysOfTheWeek">（{{date.daysOfTheWeek}}）</span>
-      </a>
-    </li>
-  {{/each}}
-  <li class="travel-days__date--empty">
-    <a>
-      <i class="fa fa-pencil"></i>
-    </a>
-  </li>
-</ul>
-<ul class="travel-plans">
-  {{#each model.travelPlans as |plan|}}
-    <li class="travel-plans__plan">
-      <span class="travel-plans__marker">{{plan.mark}}</span>
-      <i class="{{plan.icon}}"></i>
-      {{#if plan.timespan}}
-      <div class="travel-plans__timespan">
-        {{#each plan.timespan as |time|}}
-          <span>{{time}}</span>
-        {{/each}}
-      </div>
-      {{/if}}
-      {{plan.name}}
-    </li>
-  {{/each}}
-</ul>
-<button type="button" class="travel-spot-add-button">
-  <i class="fa fa-plus-circle"></i>
-</button>
-</main>
+{{spot-listing model=model}}
 {{tab-bar tabs=model.tabs}}
 

@@ -47,7 +47,7 @@ body {
     }
 
     ul, ol {
-      margin-left: 1em;
+      //margin-left: 1em;
     }
 }
 
@@ -72,7 +72,7 @@ body {
    ========================================================================== */
 .g-map-canvas {
   width: 100%;
-  height: 150px;
+  height: 200px;
 }
 /* ==========================================================================
    nav-bar
@@ -199,3 +199,24 @@ $travel-days__date__a-height: 70px;
     }
   }
 }
+
+.travel-plans {
+  .travel-plans__plan {
+    width: 100%;
+  }
+  .travel-plans__plan--spot {
+    @extend .travel-plans__plan;
+    background-color: #111111;
+  }
+  .travel-plans__plan--movement {
+    @extend .travel-plans__plan;
+    background-color: #222222;
+  }
+}
+
+.spot-append-button {
+  width: 100%;
+  font-size: 2em;
+  color: #AF595B;
+}
+

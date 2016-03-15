@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-const kSpot = Symbol('spot');
-const kMovement = Symbol('movement');
+const kSpot = Symbol.for('spot');
+const kMovement = Symbol.for('movement');
 
 const days = [
 {
@@ -10,14 +10,19 @@ const days = [
   daysOfTheWeek: "土"
 },
 {
-  month: 12,
+  month: 5,
   day: 1,
   daysOfTheWeek: "日"
 },
 {
-  month: 12,
-  day: 23,
+  month: 5,
+  day: 2,
   daysOfTheWeek: "月"
+},
+{
+  month: 5,
+  day: 3,
+  daysOfTheWeek: "火"
 },
 {
   month: 12,
@@ -25,8 +30,8 @@ const days = [
   daysOfTheWeek: "月"
 },
 {
-  month: 12,
-  day: 23,
+  month: 1,
+  day: 1,
   daysOfTheWeek: "月"
 },
 {
@@ -47,40 +52,52 @@ const travelPlans = [
   icon: "fa fa-paper-plane",
   timespan: ["10:40", "10:50"],
   kind: kSpot,
-  name: "新千歳空港"
+  name: "新千歳空港",
+  lng: 141.670449,
+  lat: 42.793302
 },
 {
-  mark: "",
+  mark: "2",
   icon: "fa fa-paper-plane",
   kind: kMovement,
-  name: "飛行機"
+  name: "飛行機",
+  lng: -122.4167,
+  lat: 37.7833
 },
 {
   mark: "1",
   icon: "fa fa-paper-plane",
   kind: kSpot,
   timespan: ["10:40", "10:50"],
-  name: "福岡空港"
+  name: "福岡空港",
+  lng: 130.446731,
+  lat: 33.590583
 },
 {
   mark: "123",
   icon: "fa fa-paper-plane",
   kind: kSpot,
   timespan: ["10:40", "10:50"],
-  name: "カツ丼"
+  name: "カツ丼",
+  lng: 130.495413,
+  lat: 33.565092
 },
 {
-  mark: "",
+  mark: "8",
   icon: "fa fa-paper-plane",
   kind: kMovement,
-  name: "徒歩"
+  name: "徒歩",
+  lng: -122.4167,
+  lat: 37.7833
 },
 {
   mark: "123",
   icon: "fa fa-paper-plane",
   kind: kSpot,
   timespan: ["10:40", "10:50"],
-  name: "小浜ビジネスホテル"
+  name: "小浜ビジネスホテル",
+  lng: 130.254570,
+  lat: 32.836920
 },
 ];
 
@@ -109,12 +126,14 @@ const navigation = {
 
 export default Ember.Route.extend({
   model() {
-    return {
+    return Ember.Object.create({
+      lng: -122.4167,
+      lat: 37.7833,
       navigation: navigation,
       tabs: tabs,
       travelPlans: travelPlans,
       days: days,
-    }
+    });
   },
 });
 
