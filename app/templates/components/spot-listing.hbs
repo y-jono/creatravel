@@ -17,7 +17,8 @@
 <ul class="travel-days">
   {{#each model.days as |date|}}
     <li class="travel-days__date">
-      <a class="active"> <!-- TODO: link to に置き換える -->
+      <!-- <a class="active"> --> <!-- TODO: link to に置き換える -->
+      <a> <!-- TODO: link to に置き換える -->
         <span class="travel-days__date__month">{{date.month}}</span>
         <span class="travel-days__date__day">{{date.day}}</span>
         <span class="travel-days__date__daysOfTheWeek">（{{date.daysOfTheWeek}}）</span>
@@ -32,18 +33,17 @@
 </ul>
 <ul class="travel-plans">
   {{#each model.travelPlans as |plan index|}}
-		<!-- <li class="travel-plans__plan--" {{action "onPlanSelected" model index}}> -->
 		<li class="travel-plans__plan--{{spotOrMovement plan}}" {{action "onPlanSelected" model index}}>
       <span class="travel-plans__marker">{{plan.mark}}</span>
-      <i class="{{plan.icon}}"></i>
+      <i class="travel-plans__icon {{plan.icon}}"></i>
       {{#if plan.timespan}}
       <div class="travel-plans__timespan">
         {{#each plan.timespan as |time|}}
-          <span>{{time}}</span>
+          <span class="travel-plans__timespan__time">{{time}}</span>
         {{/each}}
       </div>
       {{/if}}
-      {{plan.name}}
+      <span class="travel-plans__name">{{plan.name}}</span>
 		</li>
   {{/each}}
 	<li class="travel-plans__plan">

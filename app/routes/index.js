@@ -49,7 +49,7 @@ const days = [
 const travelPlans = [
 {
   mark: "1",
-  icon: "fa fa-paper-plane",
+  icon: "fa fa-plane",
   timespan: ["10:40", "10:50"],
   kind: kSpot,
   name: "新千歳空港",
@@ -58,7 +58,7 @@ const travelPlans = [
 },
 {
   mark: "2",
-  icon: "fa fa-paper-plane",
+  icon: "fa fa-plane",
   kind: kMovement,
   name: "飛行機",
   lng: -122.4167,
@@ -66,7 +66,7 @@ const travelPlans = [
 },
 {
   mark: "1",
-  icon: "fa fa-paper-plane",
+  icon: "fa fa-plane",
   kind: kSpot,
   timespan: ["10:40", "10:50"],
   name: "福岡空港",
@@ -74,8 +74,16 @@ const travelPlans = [
   lat: 33.590583
 },
 {
-  mark: "123",
-  icon: "fa fa-paper-plane",
+  mark: "8",
+  icon: "fa fa-plane",
+  kind: kMovement,
+  name: "地下鉄",
+  lng: -122.4167,
+  lat: 37.7833
+},
+{
+  mark: "12",
+  icon: "fa fa-plane",
   kind: kSpot,
   timespan: ["10:40", "10:50"],
   name: "カツ丼",
@@ -84,15 +92,15 @@ const travelPlans = [
 },
 {
   mark: "8",
-  icon: "fa fa-paper-plane",
+  icon: "fa fa-plane",
   kind: kMovement,
   name: "徒歩",
   lng: -122.4167,
   lat: 37.7833
 },
 {
-  mark: "123",
-  icon: "fa fa-paper-plane",
+  mark: "88",
+  icon: "fa fa-plane",
   kind: kSpot,
   timespan: ["10:40", "10:50"],
   name: "小浜ビジネスホテル",

@@ -203,14 +203,66 @@ $travel-days__date__a-height: 70px;
 .travel-plans {
   .travel-plans__plan {
     width: 100%;
+    padding: 10px 0px 10px 0px;
+    line-height: 2em;
+  }
+  .travel-plans__marker {
+    background-color: #E0E0E0;
+    display: inline-block; /* 幅とパディングを設定するため */
+    padding: 4px;
+    font-size: 0.8em;
+    width: 2.8em;
+    text-align: center;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    line-height: 1.5em;
+    vertical-align: middle;
+  }
+  .travel-plans__icon {
+    display: inline-block; /* 幅とパディングを設定するため */
+    //padding: 10px 12px;
+    width: 1.7em;
+    height: 1.7em;
+    line-height: 1.7em;
+    text-align: center;
+    background-color: #E0E0E0;
+    border-radius: 4em;
+    border: 2px solid #FFF;
+    color: #FFF;
+    font-size: 1.5em;
+    vertical-align: middle;
+    &.fa-plane {
+      background-color: #9EBCCB;
+    }
+  }
+  .travel-plans__timespan {
+    display: inline-block;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 1.4em;
+    vertical-align: middle;
+    .travel-plans__timespan__time {
+      display: block;
+      &:first-child:after {
+        content: "|";
+        display: block;
+      }
+    }
   }
   .travel-plans__plan--spot {
     @extend .travel-plans__plan;
-    background-color: #111111;
+    border: 1px solid #E0E0E0;
+    background-color: #FFFFFF;
+    .travel-plans__name {
+      font-weight: bold;
+    }
   }
   .travel-plans__plan--movement {
     @extend .travel-plans__plan;
-    background-color: #222222;
+    background-color: #F2F2F2;
+    .travel-plans__icon {
+      background-color: #A9A9A9;
+    }
   }
 }
 
