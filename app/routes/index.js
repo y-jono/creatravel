@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-const kSpot = Symbol.for('spot');
-const kMovement = Symbol.for('movement');
+export const kSpot = Symbol.for('spot');
+export const kMovement = Symbol.for('movement');
 
 const days = [
 {
@@ -46,7 +46,21 @@ const days = [
 }
 ];
 
+class Plan {
+  constructor(obj) {
+    this.mark = obj.mark || "0";
+    this.icon = obj.icon || "0";
+    this.timespan = obj.timespan || "0";
+    this.kind = obj.kind || "0";
+    this.name = obj.name || "0";
+    this.lng = obj.lng || "0";
+    this.lat = obj.lat || "0";
+    this.is_spot = this.kind == kSpot;
+  }
+}
+
 const travelPlans = [
+/*
 {
   mark: "1",
   icon: "fa fa-plane",
@@ -55,16 +69,28 @@ const travelPlans = [
   name: "新千歳空港",
   lng: 141.670449,
   lat: 42.793302
-},
-{
+
+}*/
+new Plan({
+  mark: "1",
+  icon: "fa fa-plane",
+  timespan: ["10:40", "10:50"],
+  kind: kSpot,
+  name: "新千歳空港",
+  lng: 141.670449,
+  lat: 42.793302
+})
+,
+new Plan({
   mark: "2",
   icon: "fa fa-plane",
   kind: kMovement,
   name: "飛行機",
   lng: -122.4167,
   lat: 37.7833
-},
-{
+})
+,
+new Plan({
   mark: "1",
   icon: "fa fa-plane",
   kind: kSpot,
@@ -72,16 +98,18 @@ const travelPlans = [
   name: "福岡空港",
   lng: 130.446731,
   lat: 33.590583
-},
-{
+})
+,
+new Plan({
   mark: "8",
   icon: "fa fa-plane",
   kind: kMovement,
   name: "地下鉄",
   lng: -122.4167,
   lat: 37.7833
-},
-{
+})
+,
+new Plan({
   mark: "12",
   icon: "fa fa-plane",
   kind: kSpot,
@@ -89,16 +117,18 @@ const travelPlans = [
   name: "カツ丼",
   lng: 130.495413,
   lat: 33.565092
-},
-{
+})
+,
+new Plan({
   mark: "8",
   icon: "fa fa-plane",
   kind: kMovement,
   name: "徒歩",
   lng: -122.4167,
   lat: 37.7833
-},
-{
+})
+,
+new Plan({
   mark: "88",
   icon: "fa fa-plane",
   kind: kSpot,
@@ -106,7 +136,7 @@ const travelPlans = [
   name: "小浜ビジネスホテル",
   lng: 130.254570,
   lat: 32.836920
-},
+}),
 ];
 
 const tabs = [{
@@ -130,7 +160,7 @@ const tabs = [{
 const navigation = {
   title: "長崎旅行2015",
   backIcon: "fa fa-chevron-left"
-}
+};
 
 export default Ember.Route.extend({
   model() {

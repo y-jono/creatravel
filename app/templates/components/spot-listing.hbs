@@ -1,15 +1,10 @@
 <main>
-{{#g-map lat=model.lat lng=model.lng zoom=12 as |context|}}
-  {{g-map-address-marker context address="San Francisco, Russian Hill"}}
-  {{#g-map-address-marker context address="Delft, The Netherlands"}}
-    {{#g-map-infowindow context}}
-      Works in block form too.
-    {{/g-map-infowindow}}
-  {{/g-map-address-marker}}
-  {{g-map-address-marker context address=searchedAddress
-                         onLocationChange=(action "onLocationChangeHandler")}}
-  {{g-map-address-marker context address=anotherSearchedAddress
-                         onLocationChange="onLocationChangeHandler"}}
+{{#g-map markersFitMode='live' zoom=12 as |context|}}
+  {{#each model.travelPlans as |plan|}}
+    {{#if plan.is_spot}}
+      {{g-map-address-marker context address=plan.name title=plan.name}}
+    {{/if}}
+  {{/each}}
 {{/g-map}}
 <div class="draggable-bar">
   <i class="fa fa-bars"></i>
