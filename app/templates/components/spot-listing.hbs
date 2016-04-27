@@ -1,5 +1,5 @@
 <main>
-{{#g-map markersFitMode='live' zoom=12 as |context|}}
+{{#g-map markersFitMode='live' lat=model.lat lng=model.lng zoom=12 as |context|}}
   {{#each model.travelPlans as |plan|}}
     {{#if plan.is_spot}}
       {{g-map-address-marker context address=plan.name title=plan.name}}
