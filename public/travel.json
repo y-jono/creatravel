@@ -513,6 +513,107 @@
         "timespan": ["TBD", "TBD"],
         "name": "ベルビュー長崎",
         "address": "ベルビュー長崎",
+        "memo": "前日予約できなかったら今日ロープウェイ予約"
+      },
+      {
+        "kind": "spot",
+        "category": "train",
+        "timespan": ["TBD", "8:03"],
+        "name": "大波止駅",
+        "address": "長崎　大波止駅",
+        "memo": ""
+      },
+      {
+        "kind": "movement",
+        "category": "train",
+        "name": "長崎軌道"
+      },
+      {
+        "kind": "spot",
+        "category": "train",
+        "timespan": ["8:10", "TBD"],
+        "name": "観光通駅",
+        "address": "長崎　観光通駅",
+        "memo": ""
+      },
+      {
+        "kind": "spot",
+        "category": "cutlery",
+        "timespan": ["TBD", "TBD"],
+        "name": "ティア",
+        "address": "長崎　ティア",
+        "memo": "自然食バイキング"
+      },
+      {
+        "kind": "spot",
+        "category": "gift",
+        "timespan": ["TBD", "TBD"],
+        "name": "カステラ本家福砂屋",
+        "address": "長崎　カステラ本家福砂屋",
+        "memo": "(寄るだけ？)8:30〜)"
+      },
+      {
+        "kind": "spot",
+        "category": "gift",
+        "timespan": ["TBD", "TBD"],
+        "name": "三栄製麺",
+        "address": "長崎　三栄製麺",
+        "memo": "(ちゃんぽん、皿うどん、金蝶ソース)7:00〜"
+      },
+      {
+        "kind": "spot",
+        "category": "gift",
+        "timespan": ["TBD", "TBD"],
+        "name": "双葉屋",
+        "address": "長崎　双葉屋",
+        "memo": "フルーツ大福 9:30〜"
+      },
+      {
+        "kind": "spot",
+        "category": "train",
+        "timespan": ["9:50", "9:56"],
+        "name": "思案橋",
+        "address": "長崎　思案橋駅",
+        "memo": "フリーきっぷ"
+      },
+      {
+        "kind": "spot",
+        "category": "train",
+        "timespan": ["9:50", "9:56"],
+        "name": "賑橋",
+        "address": "長崎　賑橋",
+        "memo": "フリーきっぷ"
+      },
+      {
+        "kind": "spot",
+        "category": "map-pin",
+        "timespan": ["TBD"],
+        "name": "眼鏡橋",
+        "address": "長崎　眼鏡橋",
+        "memo": "日本初の石造りアーチ橋"
+      },
+      {
+        "kind": "spot",
+        "category": "map-pin",
+        "timespan": ["TBD"],
+        "name": "カステラ屋さん 梅寿軒",
+        "address": "長崎　カステラ屋さん 梅寿庵",
+        "memo": "カステラがすぐ売り切れてしまうことで有名"
+      },
+      {
+        "kind": "spot",
+        "category": "map-pin",
+        "timespan": ["TBD"],
+        "name": "Ryuc(雑貨屋さん)",
+        "address": "長崎　Ryuc(雑貨屋さん)",
+        "memo": "11:00開店"
+      },
+      {
+        "kind": "spot",
+        "category": "map-pin",
+        "timespan": ["TBD"],
+        "name": "裏通り",
+        "address": "長崎　裏通り",
         "memo": ""
       }
     ]
