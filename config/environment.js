@@ -19,6 +19,10 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['g-map'] = {
+    libraries: ['places', 'geometry']
+  }
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

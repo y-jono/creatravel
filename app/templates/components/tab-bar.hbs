@@ -1,8 +1,5 @@
 <ul class="tab-bar">
   {{#each tabs as |tab|}}
-    <li class="tab-bar__tab">
-    {{link-to tab.url}}<br/>
-    {{tab.name}}
-    </li>
+    <li class="tab-bar__item">{{#link-to tabs.url}}<i class="{{tab.icon}}"></i>{{/link-to}}</li>
   {{/each}}
 </ul>

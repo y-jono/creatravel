@@ -1,0 +1,51 @@
+<main>
+{{#g-map markersFitMode='live' lat=model.lat lng=model.lng zoom=12 as |context|}}
+  {{#each model.travelPlans as |plan|}}
+    {{#if plan.is_spot}}
+      {{g-map-address-marker context address=plan.name title=plan.name}}
+    {{/if}}
+  {{/each}}
+{{/g-map}}
+<div class="draggable-bar">
+  <i class="fa fa-bars"></i>
+</div>
+<ul class="travel-days">
+  {{#each model.days as |date|}}
+    <li class="travel-days__date">
+      <!-- <a class="active"> --> <!-- TODO: link to に置き換える -->
+      <a> <!-- TODO: link to に置き換える -->
+        <span class="travel-days__date__month">{{date.month}}</span>
+        <span class="travel-days__date__day">{{date.day}}</span>
+        <span class="travel-days__date__daysOfTheWeek">（{{date.daysOfTheWeek}}）</span>
+      </a>
+    </li>
+  {{/each}}
+  <li class="travel-days__date--empty">
+    <a>
+      <i class="fa fa-pencil"></i>
+    </a>
+  </li>
+</ul>
+<ul class="travel-plans">
+  {{#each model.travelPlans as |plan index|}}
+		<li class="travel-plans__plan--{{spotOrMovement plan}}" {{action "onPlanSelected" model index}}>
+      <span class="travel-plans__marker">{{plan.mark}}</span>
+      <i class="travel-plans__icon {{plan.icon}}"></i>
+      {{#if plan.timespan}}
+      <div class="travel-plans__timespan">
+        {{#each plan.timespan as |time|}}
+          <span class="travel-plans__timespan__time">{{time}}</span>
+        {{/each}}
+      </div>
+      {{/if}}
+      <span class="travel-plans__name">{{plan.name}}</span>
+		</li>
+  {{/each}}
+	<li class="travel-plans__plan">
+		<button type="button" class="spot-append-button">
+		  <i class="fa fa-plus-circle"></i>
+		</button>
+	</li>
+</ul>
+</main>
+
