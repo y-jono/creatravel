@@ -7,6 +7,11 @@ module.exports = function(defaults) {
     // Add options here
     emberCliFontAwesome: {
       useScss: true
+    },
+    babel: {
+    // disable comments
+      comments: false,
+      includePolyfill: true
     }
   });
 
