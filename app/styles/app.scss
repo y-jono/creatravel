@@ -10,7 +10,7 @@
    ----------------------------------------------------------------- */
 
 html {
-    height: 100%;
+    height: 100%; /* 1画面に収め、はみ出さないようレイアウトするときに指定する */
 }
 
 body {
@@ -19,7 +19,7 @@ body {
     line-height: 1.5;
     background-color: #fbe550;
     color: #333;
-    height: 100%;
+    height: 100%; /* 1画面に収め、はみ出さないようレイアウトするときに指定する */
 
     input, button {
       font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
@@ -54,7 +54,7 @@ body {
 /* ----- */
 
 .container {
-    height: 100%;
+    height: 100%; /* 1画面に収め、はみ出さないようレイアウトするときに指定する */
     padding-top: calc(2em * 1.5); /* nav-bar height = font-size * line-height(ratio) */
     padding-bottom: calc(2em * 1.5); /* tab-bar height = font-size * line-height(ratio) */
 }
