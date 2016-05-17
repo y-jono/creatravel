@@ -52,7 +52,7 @@ function createPlanViewModel(obj) {
     mark: obj.mark || "0",
     icon: "fa fa-" + ( obj.category || "0"),
     timespan: obj.timespan || [],
-    kind: obj.kind || Symbol('nokind'),
+    kind: obj.kind || 'nokind',
     name: obj.name || "",
     memo: obj.memo || "",
     lng: obj.lng || 0,
@@ -65,7 +65,7 @@ function createPlanViewModel(obj) {
 export default Ember.Route.extend({
   model() {
     let travelPromise = Ember.$.getJSON("/travel.json").then((data) => {
-      Ember.Logger.debug(data);
+//      Ember.Logger.debug(data);
       return Ember.Object.create({
         lng: -122.4167,
         lat: 37.7833,
