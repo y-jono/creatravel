@@ -1,34 +1,6 @@
 import Ember from 'ember';
 import {kSpot, kMovement} from '../constants';
 
-const days = [
-{
-  month: 4,
-  day: 30,
-  daysOfTheWeek: "土"
-},
-{
-  month: 5,
-  day: 1,
-  daysOfTheWeek: "日"
-},
-{
-  month: 5,
-  day: 2,
-  daysOfTheWeek: "月"
-},
-{
-  month: 5,
-  day: 3,
-  daysOfTheWeek: "火"
-},
-{
-  month: 5,
-  day: 4,
-  daysOfTheWeek: "水"
-},
-];
-
 const tabs = [{
     name: "tab1",
     url: "index",
@@ -65,7 +37,6 @@ function createPlanViewModel(obj) {
 export default Ember.Route.extend({
   model() {
     let travelPromise = Ember.$.getJSON("/travel.json").then((data) => {
-//      Ember.Logger.debug(data);
       return Ember.Object.create({
         lng: -122.4167,
         lat: 37.7833,
@@ -74,10 +45,10 @@ export default Ember.Route.extend({
           backIcon: "fa fa-chevron-left"
         },
         tabs: tabs,
-        travelPlans: data.travelPlan[0].map((plan)=>{
+        travelPlans: data.days[0].events.map((plan)=>{
           return createPlanViewModel(plan);
         }),
-        days: days,
+        days: data.days,
       });
     });
             
