@@ -36,8 +36,11 @@ function createPlanViewModel(obj) {
 
 export default Ember.Route.extend({
   model(params) {
-    let day = params.day_id || 0;
+    let paramDate = moment(params.day_id, "YYYY-MM-DD")
     let travelPromise = Ember.$.getJSON("/travel.json").then((data) => {
+      let startDate = moment(data.start, "YYYY-MM-DD")
+      let dayIndex = paramDate.diff(startDate, "days")
+
       return Ember.Object.create({
         lng: -122.4167,
         lat: 37.7833,
@@ -46,7 +49,7 @@ export default Ember.Route.extend({
           backIcon: "fa fa-chevron-left"
         },
         tabs: tabs,
-        travelPlans: data.days[day].events.map((plan)=>{
+        travelPlans: data.days[dayIndex].events.map((plan)=>{
           return createPlanViewModel(plan);
         }),
         days: data.days,
