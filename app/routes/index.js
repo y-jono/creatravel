@@ -36,8 +36,12 @@ function createPlanViewModel(obj) {
 
 export default Ember.Route.extend({
   model(params) {
+    Ember.Logger.debug("1")
+    Ember.Logger.debug(params)
     let paramDate = moment(params.day_id, "YYYY-MM-DD")
     let travelPromise = Ember.$.getJSON("/travel.json").then((data) => {
+      Ember.Logger.debug("2")
+      Ember.Logger.debug(params)
       let startDate = moment(data.start, "YYYY-MM-DD")
       let dayIndex = paramDate.diff(startDate, "days")
 

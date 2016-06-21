@@ -6,8 +6,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-    this.route('index');
-    this.route('index', {path: '/'});
     this.route('index', {path: '/day/:day_id'});
 });
 

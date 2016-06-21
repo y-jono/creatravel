@@ -12,12 +12,11 @@
 <ul class="travel-days">
   {{#each model.days as |date|}}
     <li class="travel-days__date">
-      <!-- <a class="active"> --> <!-- TODO: link to に置き換える -->
-      <a> <!-- TODO: link to に置き換える -->
+      {{#link-to "index" date }}
         <span class="travel-days__date__month">{{date.month}}</span>
         <span class="travel-days__date__day">{{date.day}}</span>
         <span class="travel-days__date__daysOfTheWeek">（{{date.daysOfTheWeek}}）</span>
-      </a>
+      {{/link-to}}
     </li>
   {{/each}}
   <li class="travel-days__date--empty">
