@@ -1,8 +1,8 @@
 <main>
 {{#g-map markersFitMode='live' lat=model.lat lng=model.lng zoom=12 as |context|}}
-  {{#each model.travelPlans as |plan|}}
-    {{#if plan.is_spot}}
-      {{g-map-address-marker context address=plan.name title=plan.name}}
+  {{#each model.travelEvents as |event|}}
+    {{#if event.is_spot}}
+      {{g-map-address-marker context address=event.name title=event.name}}
     {{/if}}
   {{/each}}
 {{/g-map}}
@@ -25,26 +25,25 @@
     </a>
   </li>
 </ul>
-<ul class="travel-plans">
-  {{#each model.travelPlans as |plan index|}}
-		<li class="travel-plans__plan--{{spotOrMovement plan}}" {{action "onPlanSelected" model index}}>
-      <span class="travel-plans__marker">{{plan.mark}}</span>
-      <i class="travel-plans__icon {{plan.icon}}"></i>
-      {{#if plan.timespan}}
-      <div class="travel-plans__timespan">
-        {{#each plan.timespan as |time|}}
-          <span class="travel-plans__timespan__time">{{time}}</span>
+<ul class="travel-events">
+  {{#each model.travelEvents as |event index|}}
+		<li class="travel-events__event--{{spotOrMovement event}}" {{action "onEventSelected" model index}}>
+      <span class="travel-events__marker">{{event.mark}}</span>
+      <i class="travel-events__icon {{event.icon}}"></i>
+      {{#if event.timespan}}
+      <div class="travel-events__timespan">
+        {{#each event.timespan as |time|}}
+          <span class="travel-events__timespan__time">{{time}}</span>
         {{/each}}
       </div>
       {{/if}}
-      <span class="travel-plans__name">{{plan.name}}</span>
+      <span class="travel-events__name">{{event.name}}</span>
 		</li>
   {{/each}}
-	<li class="travel-plans__plan">
+	<li class="travel-events__event">
 		<button type="button" class="spot-append-button">
 		  <i class="fa fa-plus-circle"></i>
 		</button>
 	</li>
 </ul>
 </main>
-

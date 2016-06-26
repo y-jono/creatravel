@@ -200,13 +200,13 @@ $travel-days__date__a-height: 70px;
   }
 }
 
-.travel-plans {
-  .travel-plans__plan {
+.travel-events {
+  .travel-events__event {
     width: 100%;
     padding: 10px 0px 10px 0px;
     line-height: 2em;
   }
-  .travel-plans__marker {
+  .travel-events__marker {
     background-color: #E0E0E0;
     display: inline-block; /* 幅とパディングを設定するため */
     padding: 4px;
@@ -218,7 +218,7 @@ $travel-days__date__a-height: 70px;
     line-height: 1.5em;
     vertical-align: middle;
   }
-  .travel-plans__icon {
+  .travel-events__icon {
     display: inline-block; /* 幅とパディングを設定するため */
     //padding: 10px 12px;
     width: 1.7em;
@@ -235,13 +235,13 @@ $travel-days__date__a-height: 70px;
       background-color: #9EBCCB;
     }
   }
-  .travel-plans__timespan {
+  .travel-events__timespan {
     display: inline-block;
     font-size: 0.8em;
     text-align: center;
     line-height: 1.4em;
     vertical-align: middle;
-    .travel-plans__timespan__time {
+    .travel-events__timespan__time {
       display: block;
       &:first-child:after {
         content: "|";
@@ -249,18 +249,18 @@ $travel-days__date__a-height: 70px;
       }
     }
   }
-  .travel-plans__plan--spot {
-    @extend .travel-plans__plan;
+  .travel-events__event--spot {
+    @extend .travel-events__event;
     border: 1px solid #E0E0E0;
     background-color: #FFFFFF;
-    .travel-plans__name {
+    .travel-events__name {
       font-weight: bold;
     }
   }
-  .travel-plans__plan--movement {
-    @extend .travel-plans__plan;
+  .travel-events__event--movement {
+    @extend .travel-events__event;
     background-color: #F2F2F2;
-    .travel-plans__icon {
+    .travel-events__icon {
       background-color: #A9A9A9;
     }
   }

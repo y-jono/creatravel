@@ -6,12 +6,12 @@ export default Ember.Component.extend({
 	    Ember.Logger.log(`lat: ${lat}, lng: ${lng}`);
 	    Ember.Logger.debug(results);
 	  },
-		onPlanSelected(model, index) {
+		onEventSelected(model, index) {
 	    Ember.Logger.log("model[" + index + "]");
 	    Ember.Logger.debug(model);
 
-			model.set('lng', model.travelPlans[index].lng);
-			model.set('lat', model.travelPlans[index].lat);
+			model.set('lng', model.travelEvents[index].lng);
+			model.set('lat', model.travelEvents[index].lat);
 		}
 	}
 });
