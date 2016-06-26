@@ -20,7 +20,8 @@ module.exports = function(environment) {
   };
 
   ENV['g-map'] = {
-    libraries: ['places', 'geometry']
+    libraries: ['places', 'geometry'],
+    key: process.env.GMAP_API_KEY,
   }
 
   if (environment === 'development') {
