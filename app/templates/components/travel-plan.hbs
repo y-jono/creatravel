@@ -1,6 +1,6 @@
 <main>
 {{#g-map markersFitMode='live' lat=model.lat lng=model.lng zoom=12 as |context|}}
-  {{#each model.travelEvents as |event|}}
+  {{#each model.eventsOfDay as |event|}}
     {{#if event.is_spot}}
       {{g-map-address-marker context address=event.name title=event.name}}
     {{/if}}
@@ -26,7 +26,7 @@
   </li>
 </ul>
 <ul class="travel-events">
-  {{#each model.travelEvents as |event index|}}
+  {{#each model.eventsOfDay as |event index|}}
 		<li class="travel-events__event--{{spotOrMovement event}}" {{action "onEventSelected" model index}}>
       <span class="travel-events__marker">{{event.mark}}</span>
       <i class="travel-events__icon {{event.icon}}"></i>

@@ -8,10 +8,9 @@ export default Ember.Component.extend({
 	  },
 		onEventSelected(model, index) {
 	    Ember.Logger.log("model[" + index + "]");
-	    Ember.Logger.debug(model);
 
-			model.set('lng', model.travelEvents[index].lng);
-			model.set('lat', model.travelEvents[index].lat);
+			model.set('lng', model.eventsOfDay[index].lng);
+			model.set('lat', model.eventsOfDay[index].lat);
 		}
 	}
 });

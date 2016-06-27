@@ -19,17 +19,17 @@ const tabs = [{
     icon: "fa fa-ellipsis-h"
 }];
 
-function createPlanViewModel(obj) {
+function createEventViewModel(event) {
   return {
-    mark: obj.mark || "0",
-    icon: "fa fa-" + ( obj.category || "0"),
-    timespan: obj.timespan || [],
-    kind: obj.kind || 'nokind',
-    name: obj.name || "",
-    memo: obj.memo || "",
-    lng: obj.lng || 0,
-    lat: obj.lat || 0,
-    is_spot: obj.kind == kSpot,
+    mark: event.mark || "0",
+    icon: "fa fa-" + ( event.category || "0"),
+    timespan: event.timespan || [],
+    kind: event.kind || 'nokind',
+    name: event.name || "",
+    memo: event.memo || "",
+    lng: event.lng || 0,
+    lat: event.lat || 0,
+    is_spot: event.kind == kSpot,
     }
   ;
 }
@@ -37,8 +37,7 @@ function createPlanViewModel(obj) {
 export default Ember.Route.extend({
   model(params) {
     let paramDate = moment(params.day_id, "YYYY-MM-DD")
-    let travelPromise = Ember.$.getJSON("/travel.json").then((travel) => {
-      Ember.Logger.debug(params)
+    let travelPlanPromise = Ember.$.getJSON("/travel.json").then((travel) => {
       let startDate = moment(travel.start, "YYYY-MM-DD")
       let dayIndex = paramDate.diff(startDate, "days")
 
@@ -50,14 +49,13 @@ export default Ember.Route.extend({
           backIcon: "fa fa-chevron-left"
         },
         tabs: tabs,
-        travelEvents: travel.days[dayIndex].events.map((plan)=>{
-          return createPlanViewModel(plan);
+        eventsOfDay: travel.days[dayIndex].events.map((event)=>{
+          return createEventViewModel(event);
         }),
         days: travel.days,
       });
     });
             
-    return travelPromise;
+    return travelPlanPromise;
   },
 });
-
