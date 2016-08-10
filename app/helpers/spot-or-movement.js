@@ -1,8 +1,8 @@
 import Ember from 'ember';
+import {kSpot} from './../constants';
 
 export function spotOrMovement(params/*, hash*/) {
-  Ember.Logger.debug(params[0].kind)
-  return params[0].kind === 'spot' ? 'spot' : 'movement';
+  return params[0].kind === kSpot ? 'spot' : 'movement';
 }
 
 export default Ember.Helper.helper(spotOrMovement);

@@ -34,26 +34,30 @@ function createEventViewModel(event) {
   ;
 }
 
-export default Ember.Route.extend({
-  model(params) {
-    let paramDate = moment(params.day_id, "YYYY-MM-DD")
-    let travelPlanPromise = Ember.$.getJSON("/travel.json").then((travel) => {
-      let startDate = moment(travel.start, "YYYY-MM-DD")
-      let dayIndex = paramDate.diff(startDate, "days")
+function createTravelPlanViewModel(travel, day_id) {
+  let paramDate = moment(day_id, "YYYY-MM-DD")
+  let startDate = moment(travel.start, "YYYY-MM-DD")
+  let dayIndex = paramDate.diff(startDate, "days")
 
-      return Ember.Object.create({
-        lng: -122.4167,
-        lat: 37.7833,
+  return {
         navigation: {
           title: travel.title,
           backIcon: "fa fa-chevron-left"
         },
-        tabs: tabs,
+        lng: -122.4167,
+        lat: 37.7833,
+        days: travel.days,
         eventsOfDay: travel.days[dayIndex].events.map((event)=>{
           return createEventViewModel(event);
         }),
-        days: travel.days,
-      });
+        tabs: tabs,
+      }
+}
+
+export default Ember.Route.extend({
+  model(params) {
+    let travelPlanPromise = Ember.$.getJSON("/travel.json").then((travel) => {
+      return Ember.Object.create(createTravelPlanViewModel(travel, params.day_id));
     });
             
     return travelPlanPromise;
